@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#653324">
-<title>Golden Autumn Heritage | Scene 1 Static Preview</title>
+<title>Golden Autumn Heritage | Scene 1 Interactive Opening</title>
 <style>
 :root{--cream:#fff0d8;--gold:#f4d29a}
 *{box-sizing:border-box}
@@ -44,9 +44,11 @@ body{margin:0;display:grid;place-items:center;background:radial-gradient(circle 
 @media(min-width:520px){.scene{border:1px solid #f9dda05c;border-radius:15px}}
 @media(max-height:650px){.scene{min-height:100dvh}.titleblock{top:37%}.envelope{top:67%}}
 </style>
+<link rel="stylesheet" href="./scene1-motion.css">
+<script src="./scene1-motion.js" defer></script>
 </head>
 <body>
-<main class="scene" aria-label="Static artwork mockup, with illustrative names and no live invitation interactions">
+<main class="scene" aria-label="Interactive Golden Autumn Heritage wedding invitation opening demo">
 <img class="art background" src="./assets/scene-1/01_garden_background.png" alt="Golden sunset over an autumn garden pathway" />
 <div class="atmosphere"></div>
 <img class="art gateway" src="./assets/scene-1/02_myanmar_gateway.png" alt="" />
@@ -55,6 +57,8 @@ body{margin:0;display:grid;place-items:center;background:radial-gradient(circle 
 <img class="art border-left" src="./assets/scene-1/04_left_floral_border.png" alt="" />
 <img class="art border-right" src="./assets/scene-1/05_right_floral_border.png" alt="" />
 <span class="glow"></span>
+<div class="leaf-field" id="leafField" aria-hidden="true"></div>
+<div class="scatter-field" id="scatterField" aria-hidden="true"></div>
 <div class="butterfly" aria-hidden="true">
 <img class="wing-left" src="./assets/scene-1/09_butterfly_left_wing.png" alt="" />
 <img class="wing-right" src="./assets/scene-1/10_butterfly_right_wing.png" alt="" />
@@ -71,8 +75,16 @@ body{margin:0;display:grid;place-items:center;background:radial-gradient(circle 
 <img class="art envelope" src="./assets/scene-1/14_wedding_invitation_envelope.png" alt="" />
 <img class="art seal" src="./assets/scene-1/15_decorative_golden_seal.png" alt="" />
 <img class="art foreground" src="./assets/scene-1/03_foreground_garden.png" alt="" />
-<div class="cta" aria-label="Static visual placeholder for Open Invitation interaction">OPEN INVITATION</div>
-<div class="preview-note">STATIC PREVIEW · SAMPLE NAMES</div>
+<button class="cta" id="openInvitation" type="button" aria-controls="revealPanel" aria-expanded="false">OPEN INVITATION</button>
+<section class="reveal-panel" id="revealPanel" aria-label="Wedding invitation" aria-hidden="true" hidden>
+  <p class="eyebrow">WITH LOVE AND JOY</p>
+  <h2 id="invitationHeading" tabindex="-1">You're invited</h2>
+  <span class="flourish" aria-hidden="true">❦</span>
+  <p class="message">Join us to celebrate the beginning of a beautiful new chapter.</p>
+  <p class="signoff">GOLDEN AUTUMN HERITAGE</p>
+  <button class="replay" id="replayInvitation" type="button">REPLAY THE OPENING</button>
+</section>
+<div class="preview-note">INTERACTIVE DEMO · SAMPLE NAMES</div>
 </main>
 </body>
 </html>
