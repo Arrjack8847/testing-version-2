@@ -1,0 +1,66 @@
+/* Golden Autumn Heritage Scene 1 — animate existing PNG layers without changing their pixels */
+.background{animation:gardenBreathe 22s ease-in-out infinite alternate;will-change:transform}
+.atmosphere::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 57% 38%,rgba(255,219,145,.20),transparent 64%);animation:sunlight 9s ease-in-out infinite alternate}
+.vine-left{transform-origin:12% 0;animation:swayLeft 8.4s ease-in-out infinite alternate}
+.vine-right{transform-origin:88% 0;animation:swayRight 9.7s ease-in-out infinite alternate}
+.border-left{transform-origin:5% 70%;animation:floralLeft 12s ease-in-out infinite alternate}
+.border-right{transform-origin:95% 70%;animation:floralRight 10.5s ease-in-out infinite alternate}
+.foreground{animation:foregroundBreathe 11s ease-in-out infinite alternate}
+.glow{animation:sunlight 7.5s ease-in-out infinite alternate}
+.butterfly{animation:butterflyHover 4.4s ease-in-out infinite}
+.butterfly .wing-left{transform-origin:95% 55%;animation:leftWing .63s ease-in-out infinite}
+.butterfly .wing-right{transform-origin:5% 55%;animation:rightWing .63s ease-in-out infinite}
+.leaf-one{animation:restingLeafOne 6s ease-in-out infinite alternate}
+.leaf-two{animation:restingLeafTwo 6.9s ease-in-out infinite alternate}
+.leaf-three{animation:restingLeafThree 7.7s ease-in-out infinite alternate}
+.leaf-field,.scatter-field{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.leaf-field{z-index:6}
+.scatter-field{z-index:10}
+.drift-leaf{position:absolute;top:-17%;left:var(--x);width:var(--size);height:auto;opacity:0;filter:drop-shadow(0 2px 2px #3b1a0e45);animation:leafFall var(--duration) linear var(--delay) infinite;will-change:transform,opacity}
+.scatter-leaf{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:auto;pointer-events:none;animation:leafScatter var(--duration) cubic-bezier(.23,.59,.31,1) forwards}
+.cta{cursor:pointer;appearance:none;font-family:Arial,sans-serif;transition:opacity .65s ease,box-shadow .25s ease,transform .25s ease;overflow:hidden;white-space:nowrap}
+.cta:hover{box-shadow:0 7px 27px #211108d9,0 0 18px #ffd59970;transform:translateY(-2px)}
+.cta:focus-visible,.replay:focus-visible{outline:3px solid #ffedb8;outline-offset:4px}
+.cta::after{content:"";position:absolute;top:-85%;left:-65%;width:30%;height:270%;background:linear-gradient(90deg,transparent,#fff3c75e,transparent);transform:rotate(23deg);animation:buttonGleam 6.5s ease-in-out infinite}
+.scene.is-opening .cta,.scene.is-opened .cta{opacity:0;pointer-events:none;visibility:hidden}
+.scene.is-opening .titleblock,.scene.is-opened .titleblock{opacity:0;transform:translateY(-14px);transition:opacity .8s ease,transform .9s ease}
+.scene.is-opening .butterfly{animation:butterflyFlight 3.1s cubic-bezier(.26,.58,.44,1) forwards}
+.scene.is-opening .butterfly .wing-left,.scene.is-opening .butterfly .wing-right{animation-duration:.17s}
+.scene.is-opened .butterfly{opacity:0;pointer-events:none}
+.scene.is-opening .envelope{animation:envelopeLift 2.55s cubic-bezier(.2,.65,.43,1) .15s forwards}
+.scene.is-opening .seal{animation:sealLift 2.1s ease-in .3s forwards}
+.scene.is-opened .envelope,.scene.is-opened .seal{opacity:0}
+.reveal-panel{z-index:11;position:absolute;top:37%;left:13%;right:13%;min-height:31%;padding:clamp(16px,5vw,24px) clamp(14px,4vw,23px);border:1px solid #ffe1b4bc;border-radius:8px;background:linear-gradient(145deg,#3c1b18d9,#6e3528db);box-shadow:0 12px 40px #261308aa,inset 0 0 32px #d8a4591a;text-align:center;color:#fff1d7;opacity:0;transform:translateY(25px) scale(.965);pointer-events:none;transition:opacity .95s ease,transform 1.15s cubic-bezier(.2,.65,.32,1)}
+.reveal-panel[hidden]{display:none}
+.scene.is-opened .reveal-panel{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.reveal-panel .eyebrow{font-family:Arial,sans-serif;font-size:clamp(9px,2vw,11px);color:#f6d7a3;letter-spacing:.25em;margin:0 0 14px}
+.reveal-panel h2{margin:0;color:#fff0cd;font-size:clamp(29px,7vw,39px);font-weight:400;line-height:1.08;text-shadow:0 2px 7px #1e0a0a8a}
+.reveal-panel .flourish{display:block;margin:13px auto;color:#ffdcaa;font-size:23px}
+.reveal-panel .message{margin:0 auto 15px;max-width:240px;line-height:1.6;font-size:clamp(12px,2.7vw,15px)}
+.reveal-panel .signoff{margin:0 0 15px;font-size:11px;letter-spacing:.1em;color:#eac89f}
+.replay{appearance:none;background:transparent;color:#ffe3b7;border:1px solid #e5b983a3;border-radius:999px;padding:9px 15px;cursor:pointer;font:700 10px Arial,sans-serif;letter-spacing:.16em}
+.replay:hover{background:#9c623e55}
+.preview-note{transition:opacity .4s ease}
+.scene.is-opening .preview-note,.scene.is-opened .preview-note{opacity:0}
+.scene.is-background .background,.scene.is-background .art,.scene.is-background .glow,.scene.is-background .atmosphere::before,.scene.is-background .butterfly,.scene.is-background .butterfly img,.scene.is-background .drift-leaf{animation-play-state:paused}
+@keyframes gardenBreathe{from{transform:scale(1.015) translate3d(-.35%,0,0)}to{transform:scale(1.05) translate3d(.35%,-.4%,0)}}
+@keyframes sunlight{from{opacity:.56}to{opacity:1}}
+@keyframes swayLeft{from{transform:rotate(-3deg) translateX(0)}to{transform:rotate(1.9deg) translateX(1%)}}
+@keyframes swayRight{from{transform:rotate(2.7deg) translateX(0)}to{transform:rotate(-1.8deg) translateX(-1%)}}
+@keyframes floralLeft{from{transform:rotate(-.8deg) translateX(-.6%)}to{transform:rotate(1.4deg) translateX(.8%)}}
+@keyframes floralRight{from{transform:rotate(.9deg) translateX(.6%)}to{transform:rotate(-1.2deg) translateX(-.6%)}}
+@keyframes foregroundBreathe{from{transform:translateX(-.45%)}to{transform:translateX(.45%)}}
+@keyframes butterflyHover{0%,100%{transform:rotate(-18deg) translateY(0)}50%{transform:rotate(-13deg) translateY(-7px)}}
+@keyframes leftWing{0%,100%{transform:scaleX(1) rotate(-17deg)}50%{transform:scaleX(.36) rotate(-26deg)}}
+@keyframes rightWing{0%,100%{transform:scaleX(1) rotate(17deg)}50%{transform:scaleX(.36) rotate(26deg)}}
+@keyframes restingLeafOne{from{transform:translateY(0) rotate(22deg)}to{transform:translate(6px,9px) rotate(36deg)}}
+@keyframes restingLeafTwo{from{transform:translateY(0) rotate(-18deg)}to{transform:translate(-3px,-9px) rotate(-30deg)}}
+@keyframes restingLeafThree{from{transform:translateY(0) rotate(15deg)}to{transform:translate(9px,-8px) rotate(26deg)}}
+@keyframes leafFall{0%{transform:translate3d(0,-20px,0) rotate(0deg);opacity:0}7%{opacity:.85}89%{opacity:.78}100%{transform:translate3d(var(--drift),115vh,0) rotate(var(--spin));opacity:0}}
+@keyframes leafScatter{0%{opacity:0;transform:translate3d(0,0,0) rotate(0deg) scale(.55)}15%{opacity:.95}80%{opacity:.8}100%{opacity:0;transform:translate3d(var(--dx),var(--dy),0) rotate(var(--rotation)) scale(1)}}
+@keyframes butterflyFlight{0%{transform:translate3d(0,0,0) rotate(-18deg) scale(1);opacity:1}25%{transform:translate3d(58%,-55%,0) rotate(5deg) scale(1.1);opacity:1}54%{transform:translate3d(150%,-115%,0) rotate(12deg) scale(.9);opacity:1}80%{opacity:1}100%{transform:translate3d(260%,-240%,0) rotate(29deg) scale(.6);opacity:0}}
+@keyframes envelopeLift{0%{transform:translateY(0) scale(1);opacity:1}23%{transform:translateY(-18px) scale(1.08);opacity:1}63%{transform:translateY(-90px) scale(1.18);opacity:1}100%{transform:translateY(-145px) scale(.9) rotate(-3deg);opacity:0}}
+@keyframes sealLift{0%{transform:translateY(0) rotate(0);opacity:1}35%{transform:translateY(-34px) rotate(17deg);opacity:1}100%{transform:translateY(-130px) rotate(75deg);opacity:0}}
+@keyframes buttonGleam{0%,68%,100%{transform:translateX(-180%) rotate(23deg)}83%{transform:translateX(630%) rotate(23deg)}}
+@media(max-height:680px){.reveal-panel{top:33%;padding:15px 13px;min-height:0}.reveal-panel .message{line-height:1.4}.reveal-panel .flourish{margin:8px auto}.reveal-panel .eyebrow{margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){.scene *,.scene *::before,.scene *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.scene.is-opening .titleblock,.scene.is-opened .titleblock,.scene.is-opened .envelope,.scene.is-opened .seal,.scene.is-opened .butterfly{opacity:0!important}.scene.is-opened .reveal-panel{opacity:1!important;transform:none!important}.leaf-field,.scatter-field{display:none!important}}

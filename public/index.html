@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#653324">
+<title>Golden Autumn Heritage | Scene 1 Interactive Opening</title>
+<style>
+:root{--cream:#fff0d8;--gold:#f4d29a}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 25%,#654433,#241711 75%);font-family:Georgia,"Times New Roman",serif}
+.scene{position:relative;width:min(100vw,440px);height:min(100dvh,940px);min-height:630px;overflow:hidden;isolation:isolate;box-shadow:0 14px 75px #120b08aa;background:#c77743}
+.art{position:absolute;display:block;pointer-events:none;user-select:none}
+.background{inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.atmosphere{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#58251224 0%,#a9481c12 24%,#683d2755 52%,#34180f66 72%,#32170f44 100%)}
+.gateway{z-index:2;left:4%;top:17%;width:92%;height:65%;object-fit:fill;filter:drop-shadow(0 8px 7px #44230b44)}
+.vine-left{z-index:3;left:-15%;top:-7%;width:54%;height:66%;object-fit:fill;transform:rotate(-2deg)}
+.vine-right{z-index:3;right:-15%;top:-6%;width:54%;height:65%;object-fit:fill;transform:rotate(2deg)}
+.border-left{z-index:4;left:-16%;top:28%;width:38%;height:59%;object-fit:fill}
+.border-right{z-index:4;right:-16%;top:28%;width:38%;height:59%;object-fit:fill}
+.glow{z-index:5;position:absolute;left:14%;right:14%;top:39%;height:24%;background:radial-gradient(ellipse,#5b291f8c 0%,#50251d44 55%,transparent 75%);pointer-events:none}
+.titleblock{z-index:7;position:absolute;left:13%;right:13%;top:42%;text-align:center;color:var(--cream);text-shadow:0 2px 9px #29140f,0 1px 0 #482a21}
+.eyebrow{display:block;font-family:Arial,sans-serif;font-size:clamp(8px,1.7vw,10px);letter-spacing:.34em;color:#ffdda9;font-weight:bold}
+.ornament{display:block;color:#ffe2ab;font-size:23px;margin:10px 0 0}
+.names{margin:7px 0 10px;font-size:clamp(31px,8vw,46px);font-weight:normal;line-height:1.04;letter-spacing:-.04em;color:#fff0d7}
+.amp{display:block;font-style:italic;font-size:.61em;margin:5px 0;color:#ffd6a0}
+.subtitle{font-size:clamp(10px,2.4vw,13px);letter-spacing:.12em;color:#fff2dc;margin:16px 0 0}
+.small-rule{display:block;width:80px;height:1px;margin:12px auto;background:linear-gradient(90deg,transparent,#fbd9a4,transparent)}
+.butterfly{position:absolute;z-index:8;left:19%;top:28%;width:27%;height:13%;pointer-events:none;transform:rotate(-18deg);filter:drop-shadow(0 3px 3px #3d180e77)}
+.butterfly img{position:absolute;object-fit:contain}
+.wing-left{width:55%;height:85%;left:0;top:5%;transform:rotate(-18deg)}
+.wing-right{width:55%;height:85%;right:0;top:5%;transform:rotate(18deg)}
+.butterfly .body{z-index:2;width:29%;height:82%;left:35.5%;top:7%}
+.leaf{z-index:6;filter:drop-shadow(0 3px 3px #3b1a0e55)}
+.leaf-one{left:75%;top:27%;width:10%;transform:rotate(22deg)}
+.leaf-two{left:16%;top:57%;width:9%;transform:rotate(-18deg)}
+.leaf-three{right:13%;top:66%;width:8%;transform:rotate(15deg)}
+.envelope{z-index:6;left:27%;top:68.5%;width:46%;filter:drop-shadow(0 7px 7px #2c140d7f)}
+.seal{z-index:7;left:45%;top:75.8%;width:10%;filter:drop-shadow(0 3px 3px #33180e66)}
+.foreground{z-index:9;left:-25%;bottom:-3%;width:150%;height:20%;object-fit:fill}
+.cta{z-index:10;position:absolute;left:23%;right:23%;bottom:9.4%;padding:12px 10px;background:linear-gradient(140deg,#4a241de8,#693627ef);border:1px solid #f3c891ab;border-radius:999px;box-shadow:0 7px 21px #2e190db0;color:#fff2d3;text-align:center;letter-spacing:.18em;font:700 clamp(10px,2.2vw,13px) Arial,sans-serif}
+.preview-note{z-index:10;position:absolute;bottom:3%;left:0;right:0;text-align:center;color:#f1d5ab;font:9px Arial,sans-serif;letter-spacing:.1em;text-shadow:0 1px 4px #000}
+@media(min-width:520px){.scene{border:1px solid #f9dda05c;border-radius:15px}}
+@media(max-height:650px){.scene{min-height:100dvh}.titleblock{top:37%}.envelope{top:67%}}
+</style>
+<link rel="stylesheet" href="./scene1-motion.css">
+<script src="./scene1-motion.js" defer></script>
+</head>
+<body>
+<main class="scene" aria-label="Interactive Golden Autumn Heritage wedding invitation opening demo">
+<img class="art background" src="./assets/scene-1/01_garden_background.png" alt="Golden sunset over an autumn garden pathway" />
+<div class="atmosphere"></div>
+<img class="art gateway" src="./assets/scene-1/02_myanmar_gateway.png" alt="" />
+<img class="art vine-left" src="./assets/scene-1/06_left_hanging_vines.png" alt="" />
+<img class="art vine-right" src="./assets/scene-1/07_right_hanging_vines.png" alt="" />
+<img class="art border-left" src="./assets/scene-1/04_left_floral_border.png" alt="" />
+<img class="art border-right" src="./assets/scene-1/05_right_floral_border.png" alt="" />
+<span class="glow"></span>
+<div class="leaf-field" id="leafField" aria-hidden="true"></div>
+<div class="scatter-field" id="scatterField" aria-hidden="true"></div>
+<div class="butterfly" aria-hidden="true">
+<img class="wing-left" src="./assets/scene-1/09_butterfly_left_wing.png" alt="" />
+<img class="wing-right" src="./assets/scene-1/10_butterfly_right_wing.png" alt="" />
+<img class="body" src="./assets/scene-1/08_butterfly_body.png" alt="" />
+</div>
+<img class="art leaf leaf-one" src="./assets/scene-1/11_autumn_maple_leaf.png" alt="" />
+<img class="art leaf leaf-two" src="./assets/scene-1/12_golden_autumn_leaf.png" alt="" />
+<img class="art leaf leaf-three" src="./assets/scene-1/13_copper_autumn_leaf.png" alt="" />
+<section class="titleblock" aria-label="Sample placement of couple names">
+<span class="eyebrow">THE WEDDING OF</span><span class="ornament">✦</span>
+<h1 class="names">Aye <span class="amp">&amp;</span> Min</h1>
+<span class="small-rule"></span><p class="subtitle">A CELEBRATION OF LOVE</p>
+</section>
+<img class="art envelope" src="./assets/scene-1/14_wedding_invitation_envelope.png" alt="" />
+<img class="art seal" src="./assets/scene-1/15_decorative_golden_seal.png" alt="" />
+<img class="art foreground" src="./assets/scene-1/03_foreground_garden.png" alt="" />
+<button class="cta" id="openInvitation" type="button" aria-controls="revealPanel" aria-expanded="false">OPEN INVITATION</button>
+<section class="reveal-panel" id="revealPanel" aria-label="Wedding invitation" aria-hidden="true" hidden>
+  <p class="eyebrow">WITH LOVE AND JOY</p>
+  <h2 id="invitationHeading" tabindex="-1">You're invited</h2>
+  <span class="flourish" aria-hidden="true">❦</span>
+  <p class="message">Join us to celebrate the beginning of a beautiful new chapter.</p>
+  <p class="signoff">GOLDEN AUTUMN HERITAGE</p>
+  <button class="replay" id="replayInvitation" type="button">REPLAY THE OPENING</button>
+</section>
+<div class="preview-note">INTERACTIVE DEMO · SAMPLE NAMES</div>
+</main>
+</body>
+</html>
